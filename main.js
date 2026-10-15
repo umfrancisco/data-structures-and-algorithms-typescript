@@ -13,7 +13,6 @@ selectionSort(copy2);
 console.log("SELECTION SORT: ", copy2);
 insertionSort(copy3);
 console.log("INSERTION SORT: ", copy3);
-console.log("");
 function bubbleSort(arr) {
     let n = arr.length;
     for (let i = 0; i < n; i++) {

@@ -16,7 +16,6 @@ console.log("SELECTION SORT: ", copy2);
 
 insertionSort(copy3);
 console.log("INSERTION SORT: ", copy3);
-console.log("");
 
 function bubbleSort(arr: number[]) {
   let n = arr.length;
