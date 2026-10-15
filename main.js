@@ -11,7 +11,6 @@ console.log("BUBBLE SORT: ", copy1);
 selectionSort(copy2);
 console.log("SELECTION SORT: ", copy2);
 console.log("");
-// bubble sort
 function bubbleSort(arr) {
     let n = arr.length;
     for (let i = 0; i < n; i++) {
@@ -24,10 +23,25 @@ function bubbleSort(arr) {
         }
     }
 }
-// selection sort
 function selectionSort(arr) {
     for (let i = 0; i < arr.length - 1; i++) {
         moveToStart(arr, i);
+    }
+}
+let test = [6, 5, 4, 3, 1, 2];
+shiftLeft(test, 0);
+console.log(test);
+function shiftLeft(arr, start) {
+    let min = findMin(arr, start);
+    if (min.index === 0)
+        return;
+    let n = min.index - 1;
+    while (min.value < arr[n]) {
+        let temp = arr[n];
+        arr[n] = min.value;
+        arr[min.index] = temp;
+        min.index = n;
+        n--;
     }
 }
 function moveToStart(arr, start) {
