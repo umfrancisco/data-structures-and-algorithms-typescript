@@ -6,10 +6,13 @@
 let arr = [15, 6, 20, 17, 5];
 let copy1 = arr.slice();
 let copy2 = arr.slice();
+let copy3 = arr.slice();
 bubbleSort(copy1);
 console.log("BUBBLE SORT: ", copy1);
 selectionSort(copy2);
 console.log("SELECTION SORT: ", copy2);
+insertionSort(copy3);
+console.log("INSERTION SORT: ", copy3);
 console.log("");
 function bubbleSort(arr) {
     let n = arr.length;
@@ -28,9 +31,11 @@ function selectionSort(arr) {
         moveToStart(arr, i);
     }
 }
-let test = [6, 5, 4, 3, 1, 2];
-shiftLeft(test, 0);
-console.log(test);
+function insertionSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        shiftLeft(arr, i);
+    }
+}
 function shiftLeft(arr, start) {
     let min = findMin(arr, start);
     if (min.index === 0)
