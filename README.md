@@ -12,7 +12,7 @@ A collection of **Data Structures and Algorithms (DSA)** implementations using T
 | Selection Sort | O(n²) | O(1) | ✅ Completed |
 | Insertion Sort | O(n²) | O(1) | ✅ Completed |
 | Merge Sort | O(n log n) | O(n) | ⬜ Planned |
-| Quick Sort | O(n log n) | O(log n)* | ✅ Planned |
+| Quick Sort | O(n log n) | O(log n)* | ✅ Completed |
 | Counting Sort | O(n + k) | O(n + k) | ⬜ Planned |
 | Radix Sort | O(d(n + k)) | O(n + k) | ⬜ Planned |
 
