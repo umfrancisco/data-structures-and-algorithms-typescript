@@ -8,6 +8,7 @@ let copy1 = arr.slice();
 let copy2 = arr.slice();
 let copy3 = arr.slice();
 let copy4 = arr.slice();
+let copy5 = arr.slice();
 bubbleSort(copy1);
 console.log("BUBBLE SORT: ", copy1);
 selectionSort(copy2);
@@ -16,6 +17,8 @@ insertionSort(copy3);
 console.log("INSERTION SORT: ", copy3);
 quickSort(copy4);
 console.log("QUICK SORT: ", copy4);
+let sorted = mergeSort(copy5);
+console.log("MERGE SORT: ", sorted);
 function bubbleSort(arr) {
     let n = arr.length;
     for (let i = 0; i < n; i++) {
@@ -47,6 +50,35 @@ function quickSort(arr, low = 0, high) {
         quickSort(arr, low, pivot_index - 1);
         quickSort(arr, pivot_index + 1, high);
     }
+}
+function mergeSort(arr) {
+    let n = arr.length;
+    if (n <= 1) {
+        return arr;
+    }
+    let mid = n / 2;
+    let left = arr.slice(0, mid);
+    let right = arr.slice(mid);
+    let sortedLeft = mergeSort(left);
+    let sortedRight = mergeSort(right);
+    return merge(sortedLeft, sortedRight);
+}
+function merge(left, right) {
+    let res = [];
+    let i = 0, j = 0;
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            res.push(left[i]);
+            i++;
+        }
+        else {
+            res.push(right[j]);
+            j++;
+        }
+    }
+    res.push(...left.slice(i));
+    res.push(...right.slice(j));
+    return res;
 }
 function partition(arr, low, high) {
     let pivot = arr[high];
